@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="km" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>វត្តជ័យមង្គលទឹកថ្លា - ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Khmer Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Koulen&family=Moul&family=Moulpali&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        temple: {
+                            maroon: '#681212',
+                            red: '#8B1E1E',
+                            crimson: '#A82424',
+                            gold: '#D4AF37',
+                            brightgold: '#F59E0B',
+                            lightgold: '#FDE68A',
+                            saffron: '#D97706',
+                            cream: '#FFFDF7',
+                            parchment: '#FEF7E6',
+                            dark: '#2A1205'
+                        }
+                    },
+                    fontFamily: {
+                        moul: ['"Moul"', 'serif'],
+                        moulpali: ['"Moulpali"', 'serif'],
+                        koulen: ['"Koulen"', 'sans-serif'],
+                        body: ['"Kantumruy Pro"', '"Battambang"', 'sans-serif'],
+                        battambang: ['"Battambang"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Kantumruy Pro', 'Battambang', sans-serif;
+            background-color: #FFFDF7;
+            color: #2A1205;
+            line-height: 1.8;
+        }
+
+        .font-moul {
+            font-family: 'Moul', serif;
+            line-height: 1.6;
+        }
+
+        .font-koulen {
+            font-family: 'Koulen', sans-serif;
+            letter-spacing: 0.03em;
+        }
+
+        /* Traditional Khmer Border & Pattern Accents */
+        .khmer-gold-border {
+            border: 2px solid #D4AF37;
+            box-shadow: 0 0 0 4px #681212, 0 0 0 6px #D4AF37;
+        }
+
+        .khmer-card-border {
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .khmer-card-border:hover {
+            border-color: #D4AF37;
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px -10px rgba(104, 18, 18, 0.15), 0 0 15px rgba(212, 175, 55, 0.25);
+        }
+
+        /* Slow Dharma Wheel Spin */
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spinSlow 28s linear infinite;
+        }
+
+        /* Subtle Floating Effect */
+        @keyframes floatGentle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-float {
+            animation: floatGentle 4s ease-in-out infinite;
+        }
+
+        /* Bell Ringing Shake */
+        @keyframes bellRing {
+            0% { transform: rotate(0); }
+            15% { transform: rotate(18deg); }
+            30% { transform: rotate(-16deg); }
+            45% { transform: rotate(12deg); }
+            60% { transform: rotate(-10deg); }
+            75% { transform: rotate(6deg); }
+            85% { transform: rotate(-4deg); }
+            100% { transform: rotate(0); }
+        }
+        .bell-ringing {
+            animation: bellRing 1.2s ease-in-out;
+        }
+
+        /* Traditional Pattern Background Overlay */
+        .pattern-bg {
+            background-color: #681212;
+            background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#D4AF37 0.75px, #681212 0.75px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+            background-blend-mode: soft-light;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF7D6 0%, #FBBF24 45%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-btn-gradient {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%);
+        }
+        .gold-btn-gradient:hover {
+            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FEF7E6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8B1E1E;
+            border-radius: 5px;
+            border: 2px solid #FEF7E6;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #681212;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-temple-gold selection:text-temple-maroon">
+
+    <!-- Top Info Bar -->
+    <div class="bg-temple-dark text-temple-lightgold text-xs sm:text-sm py-2 px-4 border-b border-temple-gold/30">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-3">
+                <span class="inline-flex items-center text-temple-brightgold font-medium">
+                    <i class="fa-solid fa-location-dot mr-1.5"></i>
+                    សង្កាត់ទឹកថ្លា ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ
+                </span>
+                <span class="hidden md:inline text-temple-gold/40">|</span>
+                <span class="hidden md:inline text-amber-100/80">
+                    ពុទ្ធសករាជ ២៥៧០ • គិរីសោភ័ណបូរី
+                </span>
+            </div>
+            <div class="flex items-center space-x-4 ml-auto">
+                <button onclick="ringTempleBell()" id="topBellBtn" class="inline-flex items-center text-amber-200 hover:text-white transition bg-temple-maroon/80 hover:bg-temple-red px-2.5 py-0.5 rounded-full border border-temple-gold/40 text-xs">
+                    <i id="bellIconTop" class="fa-solid fa-bell text-temple-brightgold mr-1.5"></i>
+                    <span>គោះជួងសមាធិ</span>
+                </button>
+                <a href="#uposatha" class="hidden sm:inline-flex items-center text-amber-200 hover:text-temple-brightgold transition">
+                    <i class="fa-regular fa-calendar-check mr-1.5"></i>
+                    តារាងថ្ងៃសីល
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-temple-maroon/95 backdrop-blur-md text-white shadow-xl border-b-2 border-temple-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo & Name -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-amber-300 via-temple-gold to-amber-700 p-0.5 shadow-lg flex items-center justify-center">
+                        <div class="w-full h-full bg-temple-maroon rounded-full flex items-center justify-center">
+                            <!-- Dharma Wheel SVG -->
+                            <svg class="w-8 h-8 sm:w-9 sm:h-9 text-temple-brightgold animate-spin-slow" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="38" stroke="currentColor" stroke-width="5"/>
+                                <circle cx="50" cy="50" r="12" stroke="currentColor" stroke-width="4" fill="#681212"/>
+                                <circle cx="50" cy="50" r="4" fill="currentColor"/>
+                                <!-- 8 Spokes representing the Noble Eightfold Path -->
+                                <line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                                <line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                                <line x1="17.5" y1="17.5" x2="82.5" y2="82.5" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                                <line x1="82.5" y1="17.5" x2="17.5" y2="82.5" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                                <!-- Outer Knobs -->
+                                <circle cx="50" cy="5" r="3" fill="currentColor"/>
+                                <circle cx="50" cy="95" r="3" fill="currentColor"/>
+                                <circle cx="5" cy="50" r="3" fill="currentColor"/>
+                                <circle cx="95" cy="50" r="3" fill="currentColor"/>
+                                <circle cx="18" cy="18" r="3" fill="currentColor"/>
+                                <circle cx="82" cy="82" r="3" fill="currentColor"/>
+                                <circle cx="82" cy="18" r="3" fill="currentColor"/>
+                                <circle cx="18" cy="82" r="3" fill="currentColor"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="font-moul text-base sm:text-xl text-temple-lightgold group-hover:text-white transition tracking-wide">
+                            វត្តជ័យមង្គលទឹកថ្លា
+                        </h1>
+                        <p class="text-xs text-amber-200/90 font-body">
+                            ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 font-koulen text-base tracking-wide">
+                    <a href="#home" class="px-3 py-2 rounded-lg text-amber-100 hover:text-temple-brightgold hover:bg-white/5 transition">ទំព័រដើម</a>
+                    <a href="#about" class="px-3 py-2 rounded-lg text-amber-100 hover:text-temple-brightgold hover:bg-white/5 transition">អំពីវត្ត</a>
+                    <a href="#structures" class="px-3 py-2 rounded-lg text-amber-100 hover:text-temple-brightgold hover:bg-white/5 transition">សមិទ្ធផល</a>
+                    <a href="#dharma" class="px-3 py-2 rounded-lg text-amber-100 hover:text-temple-brightgold hover:bg-white/5 transition">ពុទ្ធឱវាទ</a>
+                    <a href="#ceremonies" class="px-3 py-2 rounded-lg text-amber-100 hover:text-temple-brightgold hover:bg-white/5 transition">ពិធីបុណ្យ & ថ្ងៃសីល</a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg text-amber-100 hover:text-temple-brightgold hover:bg-white/5 transition">ទំនាក់ទំនង</a>
+                    <a href="#merit" class="ml-2 px-4 py-2.5 rounded-xl gold-btn-gradient text-white shadow-md hover:shadow-amber-500/30 transition flex items-center space-x-1.5 border border-amber-300/60">
+                        <i class="fa-solid fa-hands-praying"></i>
+                        <span>ចូលរួមកសាង</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="lg:hidden">
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="p-2.5 rounded-xl bg-temple-red text-temple-lightgold border border-temple-gold/50 focus:outline-none">
+                        <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-temple-maroon border-t border-temple-gold/30 px-4 pt-3 pb-6 space-y-2 font-koulen">
+            <a href="#home" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-amber-100 hover:bg-temple-red">ទំព័រដើម</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-amber-100 hover:bg-temple-red">ប្រវត្តិ និងអំពីវត្ត</a>
+            <a href="#structures" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-amber-100 hover:bg-temple-red">សមិទ្ធផលក្នុងវត្ត</a>
+            <a href="#dharma" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-amber-100 hover:bg-temple-red">ពុទ្ធឱវាទប្រចាំថ្ងៃ</a>
+            <a href="#ceremonies" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-amber-100 hover:bg-temple-red">កម្មវិធីបុណ្យ និងថ្ងៃសីល</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-amber-100 hover:bg-temple-red">ទីតាំង និងទំនាក់ទំនង</a>
+            <div class="pt-2">
+                <a href="#merit" onclick="toggleMobileMenu()" class="w-full py-3 rounded-xl gold-btn-gradient text-white text-center font-koulen shadow-md flex items-center justify-center space-x-2 border border-amber-300/60">
+                    <i class="fa-solid fa-hands-praying"></i>
+                    <span>ចូលរួមកសាងសមិទ្ធផល</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative overflow-hidden pattern-bg text-white py-14 sm:py-20 lg:py-24 border-b-4 border-temple-gold">
+        <!-- Decorative Background Glow -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-temple-maroon/75 to-temple-maroon pointer-events-none"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Left Column: Text & CTAs -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <!-- Location Badge -->
+                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-temple-gold text-temple-lightgold text-sm sm:text-base font-medium shadow-inner">
+                        <span class="w-2.5 h-2.5 rounded-full bg-temple-brightgold animate-ping"></span>
+                        <span>សង្កាត់ទឹកថ្លា ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ</span>
+                    </div>
+
+                    <p class="text-amber-200 font-koulen text-lg sm:text-xl tracking-wider uppercase">
+                        សូមស្វាគមន៍មកកាន់គេហទំព័រផ្លូវការ
+                    </p>
+
+                    <h2 class="font-moul text-3xl sm:text-5xl lg:text-5xl leading-relaxed gold-gradient-text drop-shadow-md py-1">
+                        វត្តជ័យមង្គលទឹកថ្លា
+                    </h2>
+
+                    <p class="text-amber-100/95 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-body">
+                        ជាទីអារាមព្រះពុទ្ធសាសនាដ៏ពិសិដ្ឋ និងជាមជ្ឈមណ្ឌលប្រតិបត្តិធម៌វិន័យ ផ្សព្វផ្សាយសីលធម៌ ព្រហ្មវិហារធម៌ និងថែរក្សាវប្បធម៌ប្រពៃណីជាតិខ្មែរ ក្នុងទឹកដីក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ។
+                    </p>
+
+                    <!-- Pali Blessing Banner -->
+                    <div class="p-4 rounded-2xl bg-black/25 border border-temple-gold/40 max-w-xl mx-auto lg:mx-0">
+                        <p class="text-temple-lightgold font-battambang italic text-sm sm:text-base">
+                            «សព្វទានំ ធម្មទានំ ជិនាតិ» — ការឱ្យធម៌ជាទាន ឈ្នះអស់ទានទាំងពួង។
+                        </p>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#merit" class="w-full sm:w-auto px-7 py-4 rounded-xl gold-btn-gradient text-white font-koulen text-lg shadow-lg shadow-amber-900/40 hover:scale-105 transition flex items-center justify-center space-x-2.5 border border-amber-200">
+                            <i class="fa-solid fa-hands-praying text-xl"></i>
+                            <span>ចូលរួមកសាងសមិទ្ធផល</span>
+                        </a>
+                        <a href="#about" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-temple-lightgold font-koulen text-lg border border-temple-gold/60 transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-dharmachakra"></i>
+                            <span>ស្វែងយល់អំពីវត្ត</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Custom Khmer Pagoda Illustration Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md bg-gradient-to-b from-temple-red to-temple-maroon p-6 rounded-3xl khmer-gold-border shadow-2xl animate-float">
+                        <!-- Corner Ornaments -->
+                        <div class="text-center mb-3">
+                            <span class="px-3 py-1 rounded-full bg-temple-gold/20 border border-temple-gold/50 text-temple-lightgold text-xs font-koulen">
+                                នមោ តស្ស ភគវតោ អរហតោ សម្មាសម្ពុទ្ធស្ស
+                            </span>
+                        </div>
+
+                        <!-- Artistic SVG of Khmer Preah Vihear & Lotus -->
+                        <div class="bg-gradient-to-b from-amber-950/80 via-temple-maroon to-amber-900/60 rounded-2xl p-5 border border-temple-gold/40 flex flex-col items-center justify-center relative overflow-hidden">
+                            <!-- Full Moon Glow behind Spire -->
+                            <div class="w-36 h-36 rounded-full bg-gradient-to-tr from-amber-500/20 to-amber-200/40 blur-md absolute top-6"></div>
+
+                            <!-- Khmer Preah Vihear Architectural Vector -->
+                            <svg class="w-64 h-60 relative z-10" viewBox="0 0 260 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Top Spire (Chhvea / Phchum) -->
+                                <path d="M130 12 L134 38 L126 38 Z" fill="#FBBF24"/>
+                                <circle cx="130" cy="10" r="3.5" fill="#FEF08A"/>
+                                <!-- Upper Roof Tier 1 -->
+                                <path d="M130 35 L175 72 L85 72 Z" fill="url(#roofGrad)" stroke="#FDE68A" stroke-width="2"/>
+                                <path d="M85 72 Q75 64 72 56" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M175 72 Q185 64 188 56" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+                                <!-- Middle Roof Tier 2 -->
+                                <path d="M130 62 L205 104 L55 104 Z" fill="url(#roofGrad)" stroke="#FDE68A" stroke-width="2"/>
+                                <path d="M55 104 Q43 96 40 86" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M205 104 Q217 96 220 86" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+                                <!-- Lower Roof Tier 3 -->
+                                <path d="M130 90 L230 135 L30 135 Z" fill="url(#roofGrad)" stroke="#FDE68A" stroke-width="2.2"/>
+                                <path d="M30 135 Q16 125 14 114" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M230 135 Q244 125 246 114" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+                                <!-- Pediment (Hao Cheang) Ornate Triangle -->
+                                <path d="M130 85 L165 135 L95 135 Z" fill="#7F1D1D" stroke="#FBBF24" stroke-width="2"/>
+                                <circle cx="130" cy="117" r="9" fill="#FBBF24"/>
+                                <!-- Pillars & Sanctuary Walls -->
+                                <rect x="52" y="135" width="156" height="62" fill="#FFFBEB" stroke="#D4AF37" stroke-width="2"/>
+                                <!-- Golden Columns -->
+                                <rect x="62" y="135" width="8" height="62" fill="#D4AF37"/>
+                                <rect x="88" y="135" width="8" height="62" fill="#D4AF37"/>
+                                <rect x="164" y="135" width="8" height="62" fill="#D4AF37"/>
+                                <rect x="190" y="135" width="8" height="62" fill="#D4AF37"/>
+                                <!-- Central Arched Sanctuary Door with Buddha Silhouette -->
+                                <path d="M110 197 L110 155 Q130 138 150 155 L150 197 Z" fill="#7F1D1D" stroke="#FBBF24" stroke-width="2"/>
+                                <!-- Meditating Buddha Silhouette -->
+                                <circle cx="130" cy="166" r="5.5" fill="#FBBF24"/>
+                                <path d="M130 157 L132 161 L128 161 Z" fill="#FEF08A"/>
+                                <path d="M118 188 Q130 170 142 188 Z" fill="#FBBF24"/>
+                                <!-- Temple Base Terrace -->
+                                <rect x="36" y="197" width="188" height="10" rx="2" fill="#D4AF37"/>
+                                <rect x="24" y="207" width="212" height="12" rx="3" fill="#B45309"/>
+                                <!-- Water Reflection Lines (Teuk Thla Symbolism) -->
+                                <path d="M50 227 Q130 232 210 227" stroke="#FDE68A" stroke-width="1.5" stroke-dasharray="6 4"/>
+                                <path d="M75 234 Q130 238 185 234" stroke="#FBBF24" stroke-width="1.2" stroke-dasharray="4 4"/>
+                                <defs>
+                                    <linearGradient id="roofGrad" x1="130" y1="35" x2="130" y2="135" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#F59E0B"/>
+                                        <stop offset="60%" stop-color="#B45309"/>
+                                        <stop offset="100%" stop-color="#78350F"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+
+                            <div class="text-center mt-2">
+                                <h3 class="font-moul text-lg text-temple-lightgold">ព្រះវិហារវត្តជ័យមង្គលទឹកថ្លា</h3>
+                                <p class="text-xs text-amber-200/80 mt-1">និមិត្តរូបនៃសន្តិភាពផ្លូវចិត្ត និងសាមគ្គីធម៌</p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Badges inside Hero Card -->
+                        <div class="grid grid-cols-3 gap-2 mt-4 text-center">
+                            <div class="bg-black/25 p-2.5 rounded-xl border border-temple-gold/30">
+                                <div class="text-temple-brightgold font-koulen text-base sm:text-lg">ព្រះពុទ្ធ</div>
+                                <div class="text-[11px] text-amber-100/80">ព្រះបរមគ្រូ</div>
+                            </div>
+                            <div class="bg-black/25 p-2.5 rounded-xl border border-temple-gold/30">
+                                <div class="text-temple-brightgold font-koulen text-base sm:text-lg">ព្រះធម៌</div>
+                                <div class="text-[11px] text-amber-100/80">មាគ៌ាត្រាស់ដឹង</div>
+                            </div>
+                            <div class="bg-black/25 p-2.5 rounded-xl border border-temple-gold/30">
+                                <div class="text-temple-brightgold font-koulen text-base sm:text-lg">ព្រះសង្ឃ</div>
+                                <div class="text-[11px] text-amber-100/80">ស្រែបុណ្យដ៏ប្រសើរ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lotus Decorative Divider -->
+    <div class="bg-temple-parchment py-4 border-b border-temple-gold/30">
+        <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-around items-center gap-4 text-center">
+            <div class="flex items-center space-x-3">
+                <span class="w-10 h-10 rounded-full bg-temple-maroon text-temple-brightgold flex items-center justify-center shadow">
+                    <i class="fa-solid fa-place-of-worship"></i>
+                </span>
+                <div class="text-left">
+                    <p class="text-xs text-stone-500">ទីតាំងផ្លូវការ</p>
+                    <p class="font-bold text-sm text-temple-maroon">សង្កាត់ទឹកថ្លា ក្រុងសិរីសោភ័ណ</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="w-10 h-10 rounded-full bg-temple-maroon text-temple-brightgold flex items-center justify-center shadow">
+                    <i class="fa-solid fa-book-quran"></i>
+                </span>
+                <div class="text-left">
+                    <p class="text-xs text-stone-500">និកាយព្រះពុទ្ធសាសនា</p>
+                    <p class="font-bold text-sm text-temple-maroon">មហានិកាយ (ព្រះពុទ្ធសាសនាថេរវាទ)</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="w-10 h-10 rounded-full bg-temple-maroon text-temple-brightgold flex items-center justify-center shadow">
+                    <i class="fa-solid fa-clock"></i>
+                </span>
+                <div class="text-left">
+                    <p class="text-xs text-stone-500">បើកទទួលពុទ្ធបរិស័ទ</p>
+                    <p class="font-bold text-sm text-temple-maroon">រៀងរាល់ថ្ងៃ (ម៉ោង ៥:០០ ព្រឹក - ៨:០០ យប់)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: ABOUT THE PAGODA (ប្រវត្តិ និងអំពីវត្ត) -->
+    <section id="about" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <div class="inline-flex items-center justify-center space-x-2 text-temple-saffron font-koulen text-sm tracking-widest uppercase mb-2">
+                <span>✦</span>
+                <span>អំពីទីអារាម</span>
+                <span>✦</span>
+            </div>
+            <h2 class="font-moul text-2xl sm:text-4xl text-temple-maroon mb-4">
+                ប្រវត្តិ និងតួនាទីនៃវត្តជ័យមង្គលទឹកថ្លា
+            </h2>
+            <div class="w-28 h-1 bg-gradient-to-r from-transparent via-temple-gold to-transparent mx-auto mb-5"></div>
+            <p class="text-stone-700 text-base sm:text-lg">
+                ស្ថិតនៅក្នុងសង្កាត់ទឹកថ្លា ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ វត្តជ័យមង្គលទឹកថ្លា គឺជាទីកន្លែងគោរពបូជាដ៏សំខាន់របស់ពុទ្ធបរិស័ទជិតឆ្ងាយ។
+            </p>
+        </div>
+
+        <!-- Main About Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <!-- Story & Cultural Role -->
+            <div class="lg:col-span-7 space-y-6 bg-white p-6 sm:p-9 rounded-3xl shadow-lg khmer-card-border">
+                <div class="flex items-center space-x-3 border-b border-amber-200 pb-4">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-temple-maroon flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-dharmachakra"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-moul text-lg sm:text-xl text-temple-maroon">មជ្ឈមណ្ឌលពុទ្ធចក្រ និងអាណាចក្រ</h3>
+                        <p class="text-xs sm:text-sm text-stone-500">សង្កាត់ទឹកថ្លា ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ</p>
+                    </div>
+                </div>
+
+                <p class="text-stone-700 leading-relaxed text-base">
+                    <strong class="text-temple-maroon">វត្តជ័យមង្គលទឹកថ្លា</strong> ត្រូវបានកសាងឡើងដោយកម្លាំងសទ្ធាជ្រះថ្លារបស់ព្រះចៅអធិការ ព្រះថេរានុត្ថេរៈគ្រប់ព្រះអង្គ គណៈកម្មការ អាចារ្យ និងពុទ្ធបរិស័ទក្នុងសង្កាត់ទឹកថ្លា ក្រុងសិរីសោភ័ណ។ ឈ្មោះថា <strong>«ជ័យមង្គលទឹកថ្លា»</strong> តំណាងឱ្យជ័យជម្នះ សិរីសួស្តីមង្គល និងទឹកចិត្តដ៏បរិសុទ្ធថ្លាឈ្វេងដូចទឹកថ្លា ក្នុងការប្រតិបត្តិព្រះធម៌។
+                </p>
+
+                <p class="text-stone-700 leading-relaxed text-base">
+                    ក្រៅពីជាទីកន្លែងសម្រាប់ប្រារព្ធពិធីបុណ្យទានតាមប្រពៃណីព្រះពុទ្ធសាសនា វត្តជ័យមង្គលទឹកថ្លា បានដើរតួនាទីយ៉ាងសំខាន់ក្នុងការបណ្តុះបណ្តាលធម៌វិន័យដល់ព្រះភិក្ខុសង្ឃ សាមណេរ និងផ្តល់ទីកន្លែងស្នាក់នៅសិក្សារៀនសូត្រដល់កូនចៅពុទ្ធបរិស័ទក្នុងខេត្តបន្ទាយមានជ័យ។
+                </p>
+
+                <!-- Key Pillars List -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div class="flex items-start space-x-3 p-3.5 rounded-2xl bg-temple-parchment border border-amber-200/70">
+                        <i class="fa-solid fa-check-circle text-temple-saffron mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-temple-maroon text-sm">ការអប់រំធម៌វិន័យ និងសីលធម៌</h4>
+                            <p class="text-xs text-stone-600 mt-0.5">បង្រៀនព្រះបរិយត្តិធម៌ ភាសាបាលី និងសីលធម៌រស់នៅដល់យុវជន។</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 p-3.5 rounded-2xl bg-temple-parchment border border-amber-200/70">
+                        <i class="fa-solid fa-check-circle text-temple-saffron mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-temple-maroon text-sm">អភិរក្សវប្បធម៌ និងប្រពៃណីខ្មែរ</h4>
+                            <p class="text-xs text-stone-600 mt-0.5">ថែរក្សាក្បួនច្បាប់ ទំនៀមទម្លាប់ និងស្ថាបត្យកម្មខ្មែរដ៏ល្អផូរផង់។</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 p-3.5 rounded-2xl bg-temple-parchment border border-amber-200/70">
+                        <i class="fa-solid fa-check-circle text-temple-saffron mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-temple-maroon text-sm">សមាធិ និងសន្តិភាពផ្លូវចិត្ត</h4>
+                            <p class="text-xs text-stone-600 mt-0.5">ទីធ្លាវត្តមានដើមឈើត្រឈឹងត្រឈៃ ស្ងប់ស្ងាត់ល្អសម្រាប់សមាធិវិបស្សនា។</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 p-3.5 rounded-2xl bg-temple-parchment border border-amber-200/70">
+                        <i class="fa-solid fa-check-circle text-temple-saffron mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-temple-maroon text-sm">មនុស្សធម៌ និងសង្គមកិច្ច</h4>
+                            <p class="text-xs text-stone-600 mt-0.5">ជួយឧបត្ថម្ភគ្រួសារខ្វះខាត ចាស់ជរា និងកុមារកំព្រាក្នុងសហគមន៍។</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: 4 Highlight Stat Cards -->
+            <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <!-- Card 1 -->
+                <div class="bg-gradient-to-br from-temple-maroon to-temple-red text-white p-6 rounded-3xl shadow-xl border-2 border-temple-gold flex flex-col justify-between">
+                    <div class="w-12 h-12 rounded-2xl bg-temple-gold/20 border border-temple-gold flex items-center justify-center text-temple-lightgold text-2xl mb-4">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-amber-200 uppercase font-koulen">ព្រះសង្ឃ និងសាមណេរ</span>
+                        <h4 class="font-moul text-2xl text-temple-lightgold my-1">គង់ចាំព្រះវស្សា</h4>
+                        <p class="text-xs text-amber-100/90 leading-relaxed">
+                            ព្រះភិក្ខុសង្ឃ និងសាមណេរកំពុងសិក្សាព្រះធម៌វិន័យ និងបដិបត្តិធម៌យ៉ាងខ្ជាប់ខ្ជួន។
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-3xl shadow-md khmer-card-border flex flex-col justify-between">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-temple-saffron flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-gopuram"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-stone-500 uppercase font-koulen">សំណង់ពុទ្ធសាសនា</span>
+                        <h4 class="font-moul text-xl text-temple-maroon my-1">៦+ សមិទ្ធផលធំៗ</h4>
+                        <p class="text-xs text-stone-600 leading-relaxed">
+                            ព្រះវិហារ សាលាឆាន់ កុដិព្រះសង្ឃ បណ្ណាល័យធម៌ និងខ្លោងទ្វារវត្តដ៏ប្រណីត។
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-3xl shadow-md khmer-card-border flex flex-col justify-between">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-temple-saffron flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-stone-500 uppercase font-koulen">ពិធីបុណ្យទាន</span>
+                        <h4 class="font-moul text-xl text-temple-maroon my-1">រៀងរាល់ថ្ងៃសីល</h4>
+                        <p class="text-xs text-stone-600 leading-relaxed">
+                            ប្រារព្ធពិធីសមាទានសីល ៥ សីល ៨ ស្តាប់ព្រះធម៌ទេសនា និងបុណ្យប្រពៃណីជាតិ។
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-temple-parchment p-6 rounded-3xl shadow-md khmer-card-border flex flex-col justify-between">
+                    <div class="w-12 h-12 rounded-2xl bg-temple-maroon text-temple-lightgold flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-stone-500 uppercase font-koulen">បរិស្ថានក្នុងវត្ត</span>
+                        <h4 class="font-moul text-xl text-temple-maroon my-1">បៃតង និងស្ងប់ស្ងាត់</h4>
+                        <p class="text-xs text-stone-600 leading-relaxed">
+                            ទីធ្លាធំទូលាយ មានរុក្ខជាតិបៃតង សួនផ្កា និងបរិយាកាសស្ងប់រម្ងាប់។
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PAGODA STRUCTURES & ACHIEVEMENTS (សមិទ្ធផលនានាក្នុងវត្ត) -->
+    <section id="structures" class="py-16 sm:py-24 bg-temple-parchment border-y border-temple-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <div class="inline-flex items-center justify-center space-x-2 text-temple-saffron font-koulen text-sm tracking-widest uppercase mb-2">
+                    <span>✦</span>
+                    <span>សមិទ្ធផលព្រះពុទ្ធសាសនា</span>
+                    <span>✦</span>
+                </div>
+                <h2 class="font-moul text-2xl sm:text-4xl text-temple-maroon mb-4">
+                    សមិទ្ធផលនានាក្នុងវត្តជ័យមង្គលទឹកថ្លា
+                </h2>
+                <div class="w-28 h-1 bg-gradient-to-r from-transparent via-temple-gold to-transparent mx-auto mb-5"></div>
+                <p class="text-stone-700 text-base sm:text-lg">
+                    សមិទ្ធផលទាំងអស់នេះកើតចេញពីកម្លាំងសាមគ្គី និងសទ្ធាជ្រះថ្លារបស់ព្រះសង្ឃ និងពុទ្ធបរិស័ទជិតឆ្ងាយ។
+                </p>
+            </div>
+
+            <!-- Interactive Category Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 font-koulen">
+                <button onclick="filterStructures('all')" id="filter-all" class="structure-filter-btn px-5 py-2.5 rounded-xl bg-temple-maroon text-temple-lightgold border border-temple-gold shadow transition">
+                    ទាំងអស់ (៦)
+                </button>
+                <button onclick="filterStructures('sanctuary')" id="filter-sanctuary" class="structure-filter-btn px-5 py-2.5 rounded-xl bg-white text-temple-maroon hover:bg-amber-50 border border-amber-300 transition">
+                    សំណង់សក្ការៈ
+                </button>
+                <button onclick="filterStructures('education')" id="filter-education" class="structure-filter-btn px-5 py-2.5 rounded-xl bg-white text-temple-maroon hover:bg-amber-50 border border-amber-300 transition">
+                    ការសិក្សា & ស្នាក់នៅ
+                </button>
+                <button onclick="filterStructures('nature')" id="filter-nature" class="structure-filter-btn px-5 py-2.5 rounded-xl bg-white text-temple-maroon hover:bg-amber-50 border border-amber-300 transition">
+                    ធម្មជាតិ & បរិស្ថាន
+                </button>
+            </div>
+
+            <!-- Structures Grid (Populated dynamically via JS for clean interactivity) -->
+            <div id="structuresGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cards injected by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: INTERACTIVE DHARMA QUOTE GENERATOR (ពុទ្ធឱវាទប្រចាំថ្ងៃ) -->
+    <section id="dharma" class="py-16 sm:py-24 relative overflow-hidden pattern-bg text-white">
+        <div class="absolute inset-0 bg-temple-maroon/90"></div>
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="px-4 py-1 rounded-full bg-temple-gold/20 border border-temple-gold text-temple-lightgold font-koulen text-sm">
+                    ធម្មទាន • ពន្លឺនៃប្រាជ្ញា
+                </span>
+                <h2 class="font-moul text-2xl sm:text-4xl text-temple-lightgold mt-4 mb-3">
+                    ពុទ្ធឱវាទ និងគតិធម៌ប្រចាំថ្ងៃ
+                </h2>
+                <p class="text-amber-100/80 text-sm sm:text-base max-w-2xl mx-auto">
+                    សូមពិចារណាពុទ្ធដីកា និងគតិធម៌ខាងក្រោម ដើម្បីអប់រំចិត្តឱ្យទទួលបាននូវសេចក្តីស្ងប់ និងសុភមង្គលក្នុងជីវិតប្រចាំថ្ងៃ។
+                </p>
+            </div>
+
+            <!-- Interactive Quote Card -->
+            <div class="bg-gradient-to-b from-amber-950/90 to-temple-maroon p-6 sm:p-10 rounded-3xl khmer-gold-border shadow-2xl relative">
+                <!-- Quote Counter Badge -->
+                <div class="flex justify-between items-center mb-6 border-b border-temple-gold/30 pb-4">
+                    <div class="flex items-center space-x-2 text-temple-brightgold">
+                        <i class="fa-solid fa-dharmachakra animate-spin-slow text-xl"></i>
+                        <span id="quoteCategory" class="font-koulen text-sm sm:text-base tracking-wide">គតិធម៌ព្រះពុទ្ធសាសនា</span>
+                    </div>
+                    <span id="quoteCounter" class="px-3 py-1 rounded-full bg-white/10 text-amber-200 text-xs font-bold">
+                        ១ / ៨
+                    </span>
+                </div>
+
+                <!-- Quote Content -->
+                <div id="quoteContainer" class="text-center space-y-5 py-4 transition-opacity duration-300">
+                    <!-- Pali Scripture -->
+                    <p id="quotePali" class="font-moul text-xl sm:text-2xl lg:text-3xl text-temple-brightgold leading-relaxed">
+                        «នត្ថិ សន្តិ បរំ សុខំ»
+                    </p>
+
+                    <!-- Khmer Meaning -->
+                    <blockquote id="quoteKhmer" class="text-xl sm:text-2xl font-bold text-white max-w-3xl mx-auto leading-relaxed">
+                        «ពុំមានសេចក្តីសុខណា ស្មើដោយសេចក្តីស្ងប់ឡើយ។»
+                    </blockquote>
+
+                    <!-- Detailed Explanation -->
+                    <div class="bg-black/30 p-4 sm:p-6 rounded-2xl border border-temple-gold/30 max-w-3xl mx-auto text-left">
+                        <p class="text-xs font-koulen text-temple-lightgold uppercase mb-1">
+                            <i class="fa-solid fa-lightbulb mr-1"></i> អត្ថន័យ និងការអនុវត្ត៖
+                        </p>
+                        <p id="quoteExplanation" class="text-amber-100/95 text-sm sm:text-base leading-relaxed">
+                            សេចក្តីស្ងប់ផ្លូវចិត្តដែលកើត מתוךការរំងាប់នូវលោភៈ ទោសៈ និងមោហៈ គឺជាកំពូលនៃសេចក្តីសុខដ៏ឧត្តម ដែលទ្រព្យសម្បត្តិខាងក្រៅមិនអាចទិញបានឡើយ។
+                        </p>
+                    </div>
+
+                    <p id="quoteSource" class="text-xs sm:text-sm text-amber-300/80 italic">
+                        ប្រភព៖ គម្ពីរធម្មបទ (ពុទ្ធភាសិត)
+                    </p>
+                </div>
+
+                <!-- Interactive Controls -->
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-8 pt-6 border-t border-temple-gold/30">
+                    <button onclick="prevDharmaQuote()" class="px-4 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-amber-100 border border-temple-gold/40 font-koulen transition flex items-center space-x-2">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>មុន</span>
+                    </button>
+
+                    <button onclick="nextDharmaQuote()" class="px-6 py-3 rounded-xl gold-btn-gradient text-white font-koulen text-base shadow-lg hover:scale-105 transition flex items-center space-x-2 border border-amber-200">
+                        <span>អានពុទ្ធឱវាទបន្ទាប់</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <button onclick="copyCurrentQuote()" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-temple-lightgold border border-temple-gold/40 font-koulen transition flex items-center space-x-2">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>ចម្លងទុក</span>
+                    </button>
+
+                    <button onclick="ringTempleBell()" class="px-4 py-3 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-temple-brightgold border border-temple-gold/50 font-koulen transition flex items-center space-x-2" title="គោះជួងសមាធិ">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="hidden sm:inline">សំឡេងជួង</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: BUDDHIST CALENDAR, UPOSATHA & CEREMONIES (កម្មវិធីបុណ្យ និងថ្ងៃសីល) -->
+    <section id="ceremonies" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <div class="inline-flex items-center justify-center space-x-2 text-temple-saffron font-koulen text-sm tracking-widest uppercase mb-2">
+                <span>✦</span>
+                <span>ប្រតិទិនពុទ្ធសាសនា</span>
+                <span>✦</span>
+            </div>
+            <h2 class="font-moul text-2xl sm:text-4xl text-temple-maroon mb-4">
+                ថ្ងៃឧបោសថសីល និងពិធីបុណ្យប្រចាំឆ្នាំ
+            </h2>
+            <div class="w-28 h-1 bg-gradient-to-r from-transparent via-temple-gold to-transparent mx-auto mb-5"></div>
+            <p class="text-stone-700 text-base sm:text-lg">
+                វត្តជ័យមង្គលទឹកថ្លា តែងតែប្រារព្ធពិធីសមាទានសីលរៀងរាល់ថ្ងៃឧបោសថ និងពិធីបុណ្យធំៗតាមប្រពៃណីព្រះពុទ្ធសាសនា។
+            </p>
+        </div>
+
+        <!-- Uposatha (ថ្ងៃសីល) Interactive Box -->
+        <div id="uposatha" class="bg-gradient-to-r from-temple-maroon via-temple-red to-temple-maroon text-white rounded-3xl p-6 sm:p-10 shadow-xl border-2 border-temple-gold mb-14">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="px-3.5 py-1 rounded-full bg-temple-gold/25 border border-temple-gold text-temple-lightgold text-xs font-koulen">
+                        កាលបរិច្ឆេទថ្ងៃសីលប្រចាំខែចន្ទគតិ
+                    </span>
+                    <h3 class="font-moul text-2xl sm:text-3xl text-temple-lightgold leading-relaxed">
+                        ការរក្សាឧបោសថសីល នៅវត្តជ័យមង្គលទឹកថ្លា
+                    </h3>
+                    <p class="text-amber-100/90 text-sm sm:text-base leading-relaxed">
+                        ក្នុងមួយខែចន្ទគតិ មានថ្ងៃសីលចំនួន ៤ ដង។ ពុទ្ធបរិស័ទតែងអញ្ជើញមកវត្តជ័យមង្គលទឹកថ្លា ដើម្បីថ្វាយភត្តាហារប្រគេនព្រះសង្ឃ សមាទានសីល ៥ ឬសីល ៨ និងស្តាប់ព្រះធម៌ទេសនា។
+                    </p>
+                    <div class="p-4 rounded-2xl bg-black/25 border border-temple-gold/30 text-xs sm:text-sm text-amber-200 space-y-1">
+                        <p><i class="fa-regular fa-clock text-temple-brightgold mr-2"></i><strong>ពេលព្រឹក (៧:០០ - ១១:០០)៖</strong> នមស្ការព្រះរតនត្រ័យ សមាទានសីល និងរាប់បាត្រ</p>
+                        <p><i class="fa-regular fa-clock text-temple-brightgold mr-2"></i><strong>ពេលរសៀល (២:០០ - ៥:០០)៖</strong> ស្តាប់ព្រះធម៌ទេសនា និងចម្រើនភាវនា</p>
+                    </div>
+                </div>
+
+                <!-- 4 Lunar Phases Cards -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-temple-gold/50 hover:bg-white/15 transition">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-moul text-lg text-temple-lightgold">ថ្ងៃ ៨ កើត</span>
+                            <i class="fa-solid fa-circle-half-stroke text-2xl text-amber-300"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-amber-100/90">
+                            ថ្ងៃសីលខាង្នើតដំបូង — ពុទ្ធបរិស័ទជួបជុំសមាទានសីល និងស្តាប់ធម៌នាសាលាធម្មសភា។
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-temple-gold/50 hover:bg-white/15 transition">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-moul text-lg text-temple-lightgold">ថ្ងៃ ១៥ កើត (ពេញបូណ៌មី)</span>
+                            <i class="fa-solid fa-circle text-2xl text-amber-300"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-amber-100/90">
+                            ថ្ងៃសីលធំព្រះចន្ទពេញវង់ — ព្រះសង្ឃចូលព្រះវិហារសូត្របាតិមោក្ខ និងពុទ្ធបរិស័ទរក្សាឧបោសថសីល។
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-temple-gold/50 hover:bg-white/15 transition">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-moul text-lg text-temple-lightgold">ថ្ងៃ ៨ រោច</span>
+                            <i class="fa-solid fa-circle-half-stroke fa-flip-horizontal text-2xl text-amber-300"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-amber-100/90">
+                            ថ្ងៃសីលខាងរនោច — ការធ្វើទាន រក្សាសីល និងចម្រើនមេត្តាភាវនាឧទ្ទិសកុសលជូនបុព្វការីជន។
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-temple-gold/50 hover:bg-white/15 transition">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-moul text-lg text-temple-lightgold">ថ្ងៃ ១៤ ឬ ១៥ រោច (ខែដាច់)</span>
+                            <i class="fa-regular fa-circle text-2xl text-amber-300"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-amber-100/90">
+                            ថ្ងៃសីលដាច់ខែ — ពិធីរាប់បាត្រ វេរភត្តាហារ និងស្តាប់ព្រះធម៌ទេសនាបញ្ចប់ខែចន្ទគតិ។
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Annual Major Buddhist Ceremonies Grid -->
+        <h3 class="font-moul text-xl sm:text-2xl text-temple-maroon text-center mb-8">
+            ពិធីបុណ្យប្រពៃណីជាតិ និងសាសនាប្រចាំឆ្នាំ
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Ceremony 1 -->
+            <div class="bg-white p-6 rounded-3xl shadow-md khmer-card-border flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-amber-100 text-temple-maroon font-koulen text-xs">
+                            ១៥ កើត ខែមាឃ
+                        </span>
+                        <i class="fa-solid fa-dharmachakra text-temple-saffron text-xl"></i>
+                    </div>
+                    <h4 class="font-moul text-lg text-temple-maroon mb-2">បុណ្យមាឃបូជា</h4>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        រំលឹកដល់ថ្ងៃព្រះសម្មាសម្ពុទ្ធទ្រង់សម្តែងឱវាទបាតិមោក្ខ និងថ្ងៃចតុរង្គសន្និបាត។ មានពិធីដង្ហែប្រទក្សិណព្រះវិហារនាពេលរាត្រី។
+                    </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-stone-100 text-xs text-temple-saffron font-medium">
+                    <i class="fa-solid fa-location-dot mr-1"></i> ព្រះវិហារ និងធម្មសភា វត្តជ័យមង្គលទឹកថ្លា
+                </div>
+            </div>
+
+            <!-- Ceremony 2 -->
+            <div class="bg-white p-6 rounded-3xl shadow-md khmer-card-border flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-amber-100 text-temple-maroon font-koulen text-xs">
+                            ខែចេត្រ (មេសា)
+                        </span>
+                        <i class="fa-solid fa-sun text-temple-saffron text-xl"></i>
+                    </div>
+                    <h4 class="font-moul text-lg text-temple-maroon mb-2">បុណ្យចូលឆ្នាំថ្មីប្រពៃណីជាតិ</h4>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        ពិធីពូនភ្នំខ្សាច់ ស្រង់ព្រះពុទ្ធរូប និងព្រះសង្ឃ ឧទ្ទិសកុសលជូនបុព្វការីជន និងលេងល្បែងប្រជាប្រិយខ្មែរក្នុងទីធ្លាវត្ត។
+                    </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-stone-100 text-xs text-temple-saffron font-medium">
+                    <i class="fa-solid fa-location-dot mr-1"></i> ទីធ្លាវត្តជ័យមង្គលទឹកថ្លា ក្រុងសិរីសោភ័ណ
+                </div>
+            </div>
+
+            <!-- Ceremony 3 -->
+            <div class="bg-white p-6 rounded-3xl shadow-md khmer-card-border flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-amber-100 text-temple-maroon font-koulen text-xs">
+                            ១៥ កើត ខែពិសាខ
+                        </span>
+                        <i class="fa-solid fa-spa text-temple-saffron text-xl"></i>
+                    </div>
+                    <h4 class="font-moul text-lg text-temple-maroon mb-2">បុណ្យវិសាខបូជា</h4>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        រំលឹកដល់ថ្ងៃព្រះพุทธអង្គទ្រង់ប្រសូត ត្រាស់ដឹង និងបរិនិព្វាន។ ពុទ្ធបរិស័ទជួបជុំកាន់ផ្កាឈូក ទៀន ធូប ហែប្រទក្សិណ ៣ ជុំព្រះវិហារ។
+                    </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-stone-100 text-xs text-temple-saffron font-medium">
+                    <i class="fa-solid fa-location-dot mr-1"></i> ព្រះវិហារវត្តជ័យមង្គលទឹកថ្លា
+                </div>
+            </div>
+
+            <!-- Ceremony 4 -->
+            <div class="bg-white p-6 rounded-3xl shadow-md khmer-card-border flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-amber-100 text-temple-maroon font-koulen text-xs">
+                            ខែអាសាឍ - អស្សុជ
+                        </span>
+                        <i class="fa-solid fa-cloud-rain text-temple-saffron text-xl"></i>
+                    </div>
+                    <h4 class="font-moul text-lg text-temple-maroon mb-2">បុណ្យចូលព្រះវស្សា</h4>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        ពិធីប្រគេនទៀនព្រះវស្សា សំពត់សាដក និងគ្រឿងបរិក្ខារដល់ព្រះសង្ឃគង់ចាំព្រះវស្សាអស់រយៈកាលត្រីមាស (៣ ខែ)។
+                    </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-stone-100 text-xs text-temple-saffron font-medium">
+                    <i class="fa-solid fa-location-dot mr-1"></i> សាលាឆាន់ និងព្រះវិហារ
+                </div>
+            </div>
+
+            <!-- Ceremony 5 -->
+            <div class="bg-white p-6 rounded-3xl shadow-md khmer-card-border flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-amber-100 text-temple-maroon font-koulen text-xs">
+                            ១ រោច - ១៥ រោច ខែភទ្របទ
+                        </span>
+                        <i class="fa-solid fa-bowl-rice text-temple-saffron text-xl"></i>
+                    </div>
+                    <h4 class="font-moul text-lg text-temple-maroon mb-2">បុណ្យកាន់បិណ្ឌ និងភ្ជុំបិណ្ឌ</h4>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        ពិធីបុណ្យប្រពៃណីដ៏ធំរយៈពេល ១៥ ថ្ងៃ ដើម្បីបោះបាយបិណ្ឌ វេរចង្ហាន់ប្រគេនព្រះសង្ឃ និងឧទ្ទិសមហាកុសលជូនញាតិកាទាំង ៧ សន្តាន។
+                    </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-stone-100 text-xs text-temple-saffron font-medium">
+                    <i class="fa-solid fa-location-dot mr-1"></i> សាលាឆាន់វត្តជ័យមង្គលទឹកថ្លា
+                </div>
+            </div>
+
+            <!-- Ceremony 6 -->
+            <div class="bg-white p-6 rounded-3xl shadow-md khmer-card-border flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-amber-100 text-temple-maroon font-koulen text-xs">
+                            ១ រោច ខែអស្សុជ - ១៥ កើត ខែកត្តិក
+                        </span>
+                        <i class="fa-solid fa-gifts text-temple-saffron text-xl"></i>
+                    </div>
+                    <h4 class="font-moul text-lg text-temple-maroon mb-2">បុណ្យកឋិនទានសាមគ្គី</h4>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        ទានដ៏ពិសេសដែលមានកាលកំណត់ត្រឹម ២៩ ថ្ងៃ ដើម្បីវេរត្រៃចីវរប្រគេនព្រះសង្ឃដែលបានគង់ចាំព្រះវស្សាគ្រប់ ៣ ខែ និងប្រមូលបច្ច័យកសាងវត្ត។
+                    </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-stone-100 text-xs text-temple-saffron font-medium">
+                    <i class="fa-solid fa-location-dot mr-1"></i> វត្តជ័យមង្គលទឹកថ្លា ក្រុងសិរីសោភ័ណ
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: MERIT MAKING & CONSTRUCTION PROJECTS (ការចូលរួមកសាងសមិទ្ធផល) -->
+    <section id="merit" class="py-16 sm:py-24 bg-temple-parchment border-t border-temple-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <div class="inline-flex items-center justify-center space-x-2 text-temple-saffron font-koulen text-sm tracking-widest uppercase mb-2">
+                    <span>✦</span>
+                    <span>សទ្ធាជ្រះថ្លា • កសាងសមិទ្ធផល</span>
+                    <span>✦</span>
+                </div>
+                <h2 class="font-moul text-2xl sm:text-4xl text-temple-maroon mb-4">
+                    គម្រោងអភិវឌ្ឍន៍ និងការចូលរួមធ្វើបុណ្យ
+                </h2>
+                <div class="w-28 h-1 bg-gradient-to-r from-transparent via-temple-gold to-transparent mx-auto mb-5"></div>
+                <p class="text-stone-700 text-base sm:text-lg">
+                    ពុទ្ធបរិស័ទជិតឆ្ងាយអាចចូលរួមចំណែកកសាង និងថែរក្សាសមិទ្ធផលនានាក្នុងវត្តជ័យមង្គលទឹកថ្លា តាមសទ្ធាជ្រះថ្លា។
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <!-- Left Column: Active Pagoda Projects with Progress Bars -->
+                <div class="lg:col-span-6 space-y-6">
+                    <h3 class="font-moul text-xl text-temple-maroon flex items-center space-x-2">
+                        <i class="fa-solid fa-hammer text-temple-saffron"></i>
+                        <span>គម្រោងកំពុងដំណើរការក្នុងវត្ត</span>
+                    </h3>
+
+                    <!-- Project 1 -->
+                    <div class="bg-white p-6 rounded-3xl shadow-md khmer-card-border">
+                        <div class="flex justify-between items-start gap-2 mb-2">
+                            <h4 class="font-bold text-lg text-temple-maroon">
+                                ១. ការថែទាំ លាបពណ៌ព្រះវិហារ និងជួសជុលរបងវត្ត
+                            </h4>
+                            <span class="px-3 py-1 rounded-full bg-amber-100 text-temple-saffron font-koulen text-xs whitespace-nowrap">
+                                សម្រេចបាន ៧៥%
+                            </span>
+                        </div>
+                        <p class="text-stone-600 text-sm mb-4">
+                            គម្រោងថែទាំក្បាច់រចនាព្រះវិហារ លាបពណ៌មាសឡើងវិញ និងកែលម្អខ្លោងទ្វាររបងវត្តជ័យមង្គលទឹកថ្លា ឱ្យកាន់តែសមរម្យ។
+                        </p>
+                        <div class="w-full h-3.5 bg-amber-100 rounded-full overflow-hidden">
+                            <div class="h-full gold-btn-gradient rounded-full" style="width: 75%"></div>
+                        </div>
+                        <div class="flex justify-between items-center mt-3 text-xs text-stone-500">
+                            <span>កំពុងដំណើរការ</span>
+                            <button onclick="selectProjectInForm('ថែទាំព្រះវិហារ និងរបងវត្ត')" class="text-temple-maroon font-bold hover:underline">
+                                ចូលរួមគម្រោងនេះ →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-white p-6 rounded-3xl shadow-md khmer-card-border">
+                        <div class="flex justify-between items-start gap-2 mb-2">
+                            <h4 class="font-bold text-lg text-temple-maroon">
+                                ២. មូលនិធិទ្រទ្រង់ចង្ហាន់ និងការសិក្សាធម៌វិន័យព្រះសង្ឃ
+                            </h4>
+                            <span class="px-3 py-1 rounded-full bg-amber-100 text-temple-saffron font-koulen text-xs whitespace-nowrap">
+                                ប្រចាំខែ / ប្រចាំឆ្នាំ
+                            </span>
+                        </div>
+                        <p class="text-stone-600 text-sm mb-4">
+                            ទ្រទ្រង់ចង្ហាន់ប្រចាំថ្ងៃ សៀវភៅធម៌វិន័យ គម្ពីរព្រះត្រៃបិដក និងសម្ភារៈសិក្សាសម្រាប់ព្រះភិក្ខុសង្ឃ និងសាមណេរគង់ក្នុងវត្ត។
+                        </p>
+                        <div class="w-full h-3.5 bg-amber-100 rounded-full overflow-hidden">
+                            <div class="h-full gold-btn-gradient rounded-full" style="width: 85%"></div>
+                        </div>
+                        <div class="flex justify-between items-center mt-3 text-xs text-stone-500">
+                            <span>បើកទទួលសទ្ធាជាប្រចាំ</span>
+                            <button onclick="selectProjectInForm('មូលនិធិចង្ហាន់ និងការសិក្សាព្រះសង្ឃ')" class="text-temple-maroon font-bold hover:underline">
+                                ចូលរួមគម្រោងនេះ →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="bg-white p-6 rounded-3xl shadow-md khmer-card-border">
+                        <div class="flex justify-between items-start gap-2 mb-2">
+                            <h4 class="font-bold text-lg text-temple-maroon">
+                                ៣. គម្រោងបំពាក់អំពូលសូឡា និងដាំដើមឈើក្នុងទីធ្លាវត្ត
+                            </h4>
+                            <span class="px-3 py-1 rounded-full bg-amber-100 text-temple-saffron font-koulen text-xs whitespace-nowrap">
+                                សម្រេចបាន ៦០%
+                            </span>
+                        </div>
+                        <p class="text-stone-600 text-sm mb-4">
+                            បំពាក់អំពូលភ្លើងសូឡាបំភ្លឺផ្លូវក្នុងវត្តពេលយប់ និងដាំកូនឈើប្រណីត ផ្កាឈូក និងរុក្ខជាតិលម្អបរិស្ថានវត្ត។
+                        </p>
+                        <div class="w-full h-3.5 bg-amber-100 rounded-full overflow-hidden">
+                            <div class="h-full gold-btn-gradient rounded-full" style="width: 60%"></div>
+                        </div>
+                        <div class="flex justify-between items-center mt-3 text-xs text-stone-500">
+                            <span>ត្រូវការសទ្ធាបន្ថែម</span>
+                            <button onclick="selectProjectInForm('បំពាក់អំពូលសូឡា និងសួនធម្មជាតិក្នុងវត្ត')" class="text-temple-maroon font-bold hover:underline">
+                                ចូលរួមគម្រោងនេះ →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Merit Registration & Blessing Certificate Form -->
+                <div class="lg:col-span-6 bg-white p-6 sm:p-9 rounded-3xl shadow-xl khmer-gold-border">
+                    <div class="text-center mb-6">
+                        <div class="w-14 h-14 rounded-full bg-temple-maroon text-temple-brightgold flex items-center justify-center mx-auto text-2xl shadow-md mb-3">
+                            <i class="fa-solid fa-hands-praying"></i>
+                        </div>
+                        <h3 class="font-moul text-xl sm:text-2xl text-temple-maroon">
+                            ចុះឈ្មោះចូលរួមធ្វើបុណ្យ និងទទួលប័ណ្ណអនុមោទនា
+                        </h3>
+                        <p class="text-xs sm:text-sm text-stone-500 mt-1">
+                            បំពេញព័ត៌មានខាងក្រោម ដើម្បីទាក់ទងគណៈកម្មការវត្ត ឬបង្កើតប័ណ្ណអនុមោទនាបុណ្យឌីជីថល
+                        </p>
+                    </div>
+
+                    <form id="meritForm" onsubmit="handleMeritSubmission(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-bold text-temple-maroon mb-1">
+                                នាមត្រកូល និងនាមខ្លួន (ឬឈ្មោះក្រុមគ្រួសារ) *
+                            </label>
+                            <input type="text" id="donorName" required placeholder="ឧ. ឧបាសក សុខ សម្បត្តិ និងឧបាសិកា ចាន់ សុភា"
+                                class="w-full px-4 py-3 rounded-xl border border-amber-300 focus:border-temple-maroon focus:ring-2 focus:ring-temple-gold/40 outline-none text-sm bg-temple-cream">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold text-temple-maroon mb-1">
+                                    លេខទូរស័ព្ទទំនាក់ទំនង
+                                </label>
+                                <input type="tel" id="donorPhone" placeholder="ឧ. 012 345 678"
+                                    class="w-full px-4 py-3 rounded-xl border border-amber-300 focus:border-temple-maroon focus:ring-2 focus:ring-temple-gold/40 outline-none text-sm bg-temple-cream">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-temple-maroon mb-1">
+                                    មកពីរាជធានី/ខេត្ត/ក្រុង
+                                </label>
+                                <input type="text" id="donorLocation" placeholder="ឧ. ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ" value="ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ"
+                                    class="w-full px-4 py-3 rounded-xl border border-amber-300 focus:border-temple-maroon focus:ring-2 focus:ring-temple-gold/40 outline-none text-sm bg-temple-cream">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-temple-maroon mb-1">
+                                គោលបំណងនៃការចូលរួមបុណ្យកុសល *
+                            </label>
+                            <select id="donorProject" class="w-full px-4 py-3 rounded-xl border border-amber-300 focus:border-temple-maroon focus:ring-2 focus:ring-temple-gold/40 outline-none text-sm bg-temple-cream">
+                                <option value="កសាង និងថែទាំសមិទ្ធផលទូទៅក្នុងវត្តជ័យមង្គលទឹកថ្លា">កសាង និងថែទាំសមិទ្ធផលទូទៅក្នុងវត្តជ័យមង្គលទឹកថ្លា</option>
+                                <option value="ថែទាំព្រះវិហារ និងរបងវត្ត">១. ថែទាំព្រះវិហារ និងរបងវត្ត</option>
+                                <option value="មូលនិធិចង្ហាន់ និងការសិក្សាព្រះសង្ឃ">២. មូលនិធិចង្ហាន់ និងការសិក្សាព្រះសង្ឃ</option>
+                                <option value="បំពាក់អំពូលសូឡា និងសួនធម្មជាតិក្នុងវត្ត">៣. បំពាក់អំពូលសូឡា និងសួនធម្មជាតិក្នុងវត្ត</option>
+                                <option value="ទាក់ទងប្រារព្ធពិធីបុណ្យទានផ្សេងៗ">៤. ទាក់ទងគណៈកម្មការវត្តដើម្បីប្រារព្ធពិធីបុណ្យទាន</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-temple-maroon mb-1">
+                                សេចក្តីប្រាថ្នា ឬឧទ្ទិសកុសលជូនបុព្វការីជន
+                            </label>
+                            <textarea id="donorWish" rows="3" placeholder="ឧ. សូមឧទ្ទិសមហាកុសលនេះជូនដល់មាតាបិតា ជីដូនជីតា និងសូមប្រកបដោយពុទ្ធពរទាំង ៤ ប្រការ..."
+                                class="w-full px-4 py-3 rounded-xl border border-amber-300 focus:border-temple-maroon focus:ring-2 focus:ring-temple-gold/40 outline-none text-sm bg-temple-cream"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl gold-btn-gradient text-white font-koulen text-lg shadow-lg hover:shadow-amber-600/30 transition flex items-center justify-center space-x-2 border border-amber-200">
+                            <i class="fa-solid fa-certificate"></i>
+                            <span>បញ្ជូនសទ្ធា និងទទួលប័ណ្ណអនុមោទនាបុណ្យ</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: TEMPLE ETIQUETTE & VISITOR GUIDELINES (ក្រមសីលធម៌ពេលចូលវត្ត) -->
+    <section class="py-14 bg-white border-t border-amber-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-temple-parchment rounded-3xl p-6 sm:p-10 border border-temple-gold/50 shadow-sm">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <h3 class="font-moul text-xl sm:text-2xl text-temple-maroon mb-2">
+                        ក្រមសីលធម៌ និងការស្លៀកពាក់ពេលអញ្ជើញចូលវត្ត
+                    </h3>
+                    <p class="text-sm text-stone-600">
+                        ដើម្បីរក្សានូវសេចក្តីថ្លៃថ្នូរ និងការគោរពចំពោះទីសក្ការៈបូជា សូមពុទ្ធបរិស័ទ និងភ្ញៀវទេសចរមេត្តាអនុវត្តតាមការណែនាំខាងក្រោម៖
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="bg-white p-5 rounded-2xl border border-amber-200 text-center">
+                        <div class="w-12 h-12 rounded-full bg-amber-100 text-temple-maroon flex items-center justify-center mx-auto mb-3 text-xl">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+                        <h4 class="font-bold text-temple-maroon text-sm mb-1">ស្លៀកពាក់សមរម្យ</h4>
+                        <p class="text-xs text-stone-600">សូមស្លៀកពាក់បិទបាំងស្មា និងជង្គង់ឱ្យបានសមរម្យ ជាពិសេសអាវស ឬហូលផាមួងខ្មែរ។</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl border border-amber-200 text-center">
+                        <div class="w-12 h-12 rounded-full bg-amber-100 text-temple-maroon flex items-center justify-center mx-auto mb-3 text-xl">
+                            <i class="fa-solid fa-shoe-prints"></i>
+                        </div>
+                        <h4 class="font-bold text-temple-maroon text-sm mb-1">ដោះស្បែកជើង និងមួក</h4>
+                        <p class="text-xs text-stone-600">សូមដោះស្បែកជើង មួក និងវ៉ែនតាខ្មៅ មុនពេលឈានចូលក្នុងព្រះវិហារ និងសាលាធម្មសភា។</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl border border-amber-200 text-center">
+                        <div class="w-12 h-12 rounded-full bg-amber-100 text-temple-maroon flex items-center justify-center mx-auto mb-3 text-xl">
+                            <i class="fa-solid fa-volume-low"></i>
+                        </div>
+                        <h4 class="font-bold text-temple-maroon text-sm mb-1">រក្សាភាពស្ងប់ស្ងាត់</h4>
+                        <p class="text-xs text-stone-600">សូមនិយាយស្តីដោយសំឡេងតិចៗ ប្រកបដោយសុជីវធម៌ និងបិទសំឡេងទូរស័ព្ទពេលស្តាប់ធម៌។</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl border border-amber-200 text-center">
+                        <div class="w-12 h-12 rounded-full bg-amber-100 text-temple-maroon flex items-center justify-center mx-auto mb-3 text-xl">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                        <h4 class="font-bold text-temple-maroon text-sm mb-1">ថែរក្សាអនាម័យវត្ត</h4>
+                        <p class="text-xs text-stone-600">សូមចូលរួមទុកដាក់សំរាមក្នុងធុងសំរាមឱ្យបានត្រឹមត្រូវ ដើម្បីទីធ្លាវត្តស្អាតជានិច្ច។</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: LOCATION & CONTACT FOOTER (ទីតាំង និងទំនាក់ទំនង) -->
+    <footer id="contact" class="bg-temple-dark text-amber-100 border-t-4 border-temple-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+                <!-- Pagoda Info -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 rounded-full bg-temple-maroon border-2 border-temple-gold flex items-center justify-center text-temple-brightgold text-xl">
+                            <i class="fa-solid fa-dharmachakra"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-moul text-xl text-temple-lightgold">វត្តជ័យមង្គលទឹកថ្លា</h3>
+                            <p class="text-xs text-amber-300/80">សង្កាត់ទឹកថ្លា ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-amber-100/80 leading-relaxed">
+                        វត្តជ័យមង្គលទឹកថ្លា សូមស្វាគមន៍ពុទ្ធបរិស័ទជិតឆ្ងាយទាំងអស់ ដែលមានសទ្ធាជ្រះថ្លាអញ្ជើញមកធ្វើបុណ្យទាន សមាទានសីល ចម្រើនសមាធិភាវនា និងស្វែងយល់ពីព្រះធម៌។
+                    </p>
+                    <div class="p-4 rounded-2xl bg-white/5 border border-temple-gold/30 text-xs text-temple-lightgold">
+                        «សូមពុទ្ធបរិស័ទគ្រប់រូប ប្រកបដោយពុទ្ធពរទាំង ៤ ប្រការ គឺ អាយុ វណ្ណៈ សុខៈ ពលៈ កុំបីឃ្លៀងឃ្លាតឡើយ។»
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="font-koulen text-lg text-temple-brightgold tracking-wider border-b border-temple-gold/30 pb-2">
+                        ម៉ឺនុយគេហទំព័រ
+                    </h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-temple-brightgold transition"><i class="fa-solid fa-angle-right mr-2 text-temple-gold"></i>ទំព័រដើម</a></li>
+                        <li><a href="#about" class="hover:text-temple-brightgold transition"><i class="fa-solid fa-angle-right mr-2 text-temple-gold"></i>ប្រវត្តិ និងអំពីវត្ត</a></li>
+                        <li><a href="#structures" class="hover:text-temple-brightgold transition"><i class="fa-solid fa-angle-right mr-2 text-temple-gold"></i>សមិទ្ធផលក្នុងវត្ត</a></li>
+                        <li><a href="#dharma" class="hover:text-temple-brightgold transition"><i class="fa-solid fa-angle-right mr-2 text-temple-gold"></i>ពុទ្ធឱវាទប្រចាំថ្ងៃ</a></li>
+                        <li><a href="#ceremonies" class="hover:text-temple-brightgold transition"><i class="fa-solid fa-angle-right mr-2 text-temple-gold"></i>កម្មវិធីបុណ្យ និងថ្ងៃសីល</a></li>
+                        <li><a href="#merit" class="hover:text-temple-brightgold transition"><i class="fa-solid fa-angle-right mr-2 text-temple-gold"></i>ចូលរួមកសាងសមិទ្ធផល</a></li>
+                    </ul>
+                </div>
+
+                <!-- Address & Directions in Serei Saophoan -->
+                <div class="lg:col-span-4 space-y-4">
+                    <h4 class="font-koulen text-lg text-temple-brightgold tracking-wider border-b border-temple-gold/30 pb-2">
+                        អាសយដ្ឋាន និងទំនាក់ទំនង
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-temple-brightgold mt-1"></i>
+                            <span>
+                                <strong>ទីតាំង៖</strong> សង្កាត់ទឹកថ្លា ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ (ព្រះរាជាណាចក្រកម្ពុជា)
+                            </span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-phone text-temple-brightgold mt-1"></i>
+                            <span>
+                                <strong>គណៈកម្មការ និងអាចារ្យវត្ត៖</strong> សូមទំនាក់ទំនងដោយផ្ទាល់នៅទីចាត់ការវត្តជ័យមង្គលទឹកថ្លា
+                            </span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-clock text-temple-brightgold mt-1"></i>
+                            <span>
+                                <strong>ម៉ោងបើកទ្វារវត្ត៖</strong> រៀងរាល់ថ្ងៃ ចាប់ពីម៉ោង ៥:០០ ព្រឹក ដល់ ៨:០០ យប់
+                            </span>
+                        </li>
+                    </ul>
+
+                    <!-- Stylized Map Direction Card -->
+                    <div class="p-4 rounded-2xl bg-temple-maroon/60 border border-temple-gold/40 flex items-center justify-between">
+                        <div class="text-xs">
+                            <p class="font-bold text-temple-lightgold">ផែនទីទីតាំងវត្តជ័យមង្គលទឹកថ្លា</p>
+                            <p class="text-amber-200/80">ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ</p>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=វត្តជ័យមង្គលទឹកថ្លា+ក្រុងសិរីសោភ័ណ+ខេត្តបន្ទាយមានជ័យ" target="_blank" rel="noopener noreferrer"
+                           class="px-3.5 py-2 rounded-xl bg-temple-gold text-temple-dark font-koulen text-xs hover:bg-amber-400 transition whitespace-nowrap">
+                            <i class="fa-solid fa-map-location-dot mr-1"></i> បើកផែនទី
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs text-amber-200/60 gap-4">
+                <p>© ព.ស. ២៥៧០ / គ.ស. ២០២៦ រក្សាសិទ្ធិគ្រប់យ៉ាងដោយ វត្តជ័យមង្គលទឹកថ្លា (ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ)</p>
+                <p class="font-koulen text-temple-lightgold/80">ពុទ្ធំ សរណំ គច្ឆាមិ • ធម្មំ សរណំ គច្ឆាមិ • សង្ឃំ សរណំ គច្ឆាមិ</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL 1: STRUCTURE DETAIL MODAL -->
+    <div id="structureModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden khmer-gold-border shadow-2xl animate-float">
+            <div class="bg-temple-maroon text-white p-5 flex justify-between items-center border-b-2 border-temple-gold">
+                <h3 id="modalStructureTitle" class="font-moul text-lg sm:text-xl text-temple-lightgold">ព័ត៌មានលម្អិត</h3>
+                <button onclick="closeStructureModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-amber-200">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-4">
+                <div id="modalStructureBadge" class="inline-block px-3 py-1 rounded-full bg-amber-100 text-temple-maroon font-koulen text-xs"></div>
+                <p id="modalStructureDesc" class="text-stone-700 text-sm sm:text-base leading-relaxed"></p>
+                <div class="p-4 rounded-2xl bg-temple-parchment border border-amber-300">
+                    <h4 class="font-bold text-temple-maroon text-xs uppercase mb-1">តួនាទី និងសារៈសំខាន់ក្នុងវត្ត៖</h4>
+                    <p id="modalStructureSignificance" class="text-xs sm:text-sm text-stone-600 leading-relaxed"></p>
+                </div>
+                <div class="pt-2 flex justify-end">
+                    <button onclick="closeStructureModal()" class="px-6 py-2.5 rounded-xl bg-temple-maroon text-temple-lightgold font-koulen text-sm hover:bg-temple-red transition">
+                        បិទផ្ទាំងនេះ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: DIGITAL MERIT APPRECIATION CERTIFICATE (ប័ណ្ណអនុមោទនាបុណ្យ) -->
+    <div id="certificateModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-temple-parchment rounded-3xl max-w-xl w-full p-6 sm:p-8 khmer-gold-border shadow-2xl relative my-8">
+            <div class="text-center border-2 border-temple-gold/60 rounded-2xl p-5 sm:p-7 bg-white relative">
+                <!-- Header Emblem -->
+                <div class="w-16 h-16 rounded-full bg-temple-maroon text-temple-brightgold flex items-center justify-center mx-auto mb-3 border-2 border-temple-gold shadow-md">
+                    <i class="fa-solid fa-dharmachakra text-3xl animate-spin-slow"></i>
+                </div>
+                <p class="font-koulen text-xs sm:text-sm text-temple-saffron tracking-widest">
+                    ព្រះពុទ្ធសាសនា • វត្តជ័យមង្គលទឹកថ្លា • ក្រុងសិរីសោភ័ណ
+                </p>
+                <h3 class="font-moul text-2xl sm:text-3xl text-temple-maroon my-3">
+                    ប័ណ្ណអនុមោទនាបុណ្យ
+                </h3>
+                <div class="w-32 h-0.5 bg-temple-gold mx-auto mb-4"></div>
+
+                <p class="text-sm text-stone-600 mb-2">
+                    គណៈកម្មការ និងព្រះសង្ឃ វត្តជ័យមង្គលទឹកថ្លា សូមអនុមោទនាត្រេកអរចំពោះសទ្ធាជ្រះថ្លារបស់៖
+                </p>
+
+                <h4 id="certDonorName" class="font-moul text-lg sm:text-xl text-temple-maroon bg-amber-50 py-2.5 px-4 rounded-xl border border-amber-200 my-3">
+                    ឧបាសក / ឧបាសិកា
+                </h4>
+
+                <p class="text-xs sm:text-sm text-stone-600">
+                    មកពី៖ <span id="certDonorLocation" class="font-bold text-stone-800"></span>
+                </p>
+
+                <div class="my-4 p-3.5 rounded-xl bg-temple-parchment border border-amber-300 text-xs sm:text-sm">
+                    <p class="text-stone-500">បានចុះឈ្មោះចូលរួមចំណែកបុណ្យកុសលក្នុង៖</p>
+                    <p id="certDonorProject" class="font-bold text-temple-maroon text-sm sm:text-base mt-0.5"></p>
+                </div>
+
+                <p id="certDonorWishBox" class="text-xs italic text-stone-600 mb-4 px-2"></p>
+
+                <div class="p-3.5 rounded-xl bg-temple-maroon text-temple-lightgold text-xs sm:text-sm leading-relaxed">
+                    «ដោយអំណាចនៃមហាកុសលផលបុណ្យនេះ សូមលោកអ្នក និងក្រុមគ្រួសារ ប្រកបតែនឹងពុទ្ធពរទាំង ៤ ប្រការ គឺ អាយុ វណ្ណៈ សុខៈ និងពលៈ កុំបីឃ្លៀងឃ្លាតឡើយ។ សាធុ! សាធុ! សាធុ!»
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mt-5">
+                <button onclick="ringTempleBell()" class="px-5 py-2.5 rounded-xl gold-btn-gradient text-white font-koulen text-sm shadow flex items-center space-x-2">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>គោះជួងសាធុការ</span>
+                </button>
+                <button onclick="closeCertificateModal()" class="px-6 py-2.5 rounded-xl bg-temple-maroon text-temple-lightgold font-koulen text-sm hover:bg-temple-red transition">
+                    បិទផ្ទាំងអនុមោទនា
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 z-50 hidden bg-temple-maroon text-white px-5 py-3.5 rounded-2xl shadow-2xl border-2 border-temple-gold flex items-center space-x-3">
+        <i class="fa-solid fa-circle-check text-temple-brightgold text-xl"></i>
+        <span id="toastMessage" class="text-sm font-medium">បានចម្លងដោយជោគជ័យ!</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Pagoda Structures Dataset
+        const pagodaStructures = [
+            {
+                id: 1,
+                title: "ព្រះវិហារដ៏ស្កឹមស្កៃ",
+                category: "sanctuary",
+                categoryLabel: "សំណង់សក្ការៈ",
+                icon: "fa-gopuram",
+                shortDesc: "ជាទីសក្ការៈដ៏ខ្ពង់ខ្ពស់បំផុតក្នុងវត្ត សម្រាប់តម្កល់ព្រះពុទ្ធរូបព្រះជីវ៍ និងប្រារព្ធពិធីសង្ឃកម្មនានា។",
+                significance: "ព្រះវិហារវត្តជ័យមង្គលទឹកថ្លា រចនាឡើងតាមរចនាបថស្ថាបត្យកម្មខ្មែរប្រពៃណី មានដំបូលត្រួតស៊ីគ្នា លម្អដោយជហ្វា នាគដងក្តារ និងគំនូរពុទ្ធប្រវត្តិដ៏រស់រវើកនៅផ្នែកខាងក្នុង។"
+            },
+            {
+                id: 2,
+                title: "សាលាឆាន់ និងសាលាធម្មសភា",
+                category: "sanctuary",
+                categoryLabel: "សំណង់សក្ការៈ",
+                icon: "fa-place-of-worship",
+                shortDesc: "កន្លែងសម្រាប់ពុទ្ធបរិស័ទជួបជុំសមាទានសីល ស្តាប់ព្រះធម៌ទេសនា និងវេរភត្តាហារប្រគេនព្រះសង្ឃ។",
+                significance: "សាលាឆាន់មានទីធ្លាធំទូលាយ អាចទទួលពុទ្ធបរិស័ទរាប់រយនាក់ក្នុងថ្ងៃឧបោសថសីល បុណ្យភ្ជុំបិណ្ឌ បុណ្យកឋិនទាន និងពិធីបុណ្យប្រពៃណីជាតិ។"
+            },
+            {
+                id: 3,
+                title: "កុដិព្រះសង្ឃ",
+                category: "education",
+                categoryLabel: "ការសិក្សា & ស្នាក់នៅ",
+                icon: "fa-house-chimney-window",
+                shortDesc: "ទីកន្លែងគង់នៅដ៏ស្ងប់ស្ងាត់របស់ព្រះភិក្ខុសង្ឃ និងសាមណេរ សម្រាប់ទន្ទេញធម៌ និងបដិបត្តិធម៌វិន័យ។",
+                significance: "កុដិព្រះសង្ឃក្នុងវត្តជ័យមង្គលទឹកថ្លា ត្រូវបានរៀបចំដោយមានរបៀបរៀបរយ ស្អាតបាត និងផ្តល់ភាពងាយស្រួលដល់ព្រះសង្ឃក្នុងការសិក្សាព្រះបរិយត្តិធម៌។"
+            },
+            {
+                id: 4,
+                title: "បណ្ណាល័យព្រះធម៌",
+                category: "education",
+                categoryLabel: "ការសិក្សា & ស្នាក់នៅ",
+                icon: "fa-book-open-reader",
+                shortDesc: "ទីកន្លែងតម្កល់គម្ពីរព្រះត្រៃបិដក សៀវភៅធម៌វិន័យ អក្សរសាស្ត្រខ្មែរ និងឯកសារវប្បធម៌ប្រវត្តិសាស្ត្រ។",
+                significance: "បើកទូលាយសម្រាប់ព្រះសង្ឃ សិស្សានុសិស្ស និងពុទ្ធបរិស័ទក្នុងក្រុងសិរីសោភ័ណ ចូលអាន និងស្រាវជ្រាវដើម្បីបង្កើនចំណេះដឹងផ្លូវធម៌ និងផ្លូវលោក។"
+            },
+            {
+                id: 5,
+                title: "ប្រាសាទពុទ្ធរូប និងចេតិយ",
+                category: "sanctuary",
+                categoryLabel: "សំណង់សក្ការៈ",
+                icon: "fa-monument",
+                shortDesc: "ទីកន្លែងតម្កល់ព្រះពុទ្ធរូបក្រោមដើមពោធិ៍ព្រឹក្ស និងចេតិយតម្កល់អដ្ឋិធាតុបុព្វការីជន។",
+                significance: "ជាកន្លែងសម្រាប់ពុទ្ធបរិស័ទអុជធូបទៀន ថ្វាយផ្កាឈូក រំលឹកគុណព្រះរតនត្រ័យ និងធ្វើបុណ្យបង្សុកូលឧទ្ទិសកុសលជូនដូនតា។"
+            },
+            {
+                id: 6,
+                title: "សួនធម្មជាតិ និងទីធ្លាវត្តទឹកថ្លា",
+                category: "nature",
+                categoryLabel: "ធម្មជាតិ & បរិស្ថាន",
+                icon: "fa-tree",
+                shortDesc: "ទីធ្លាវត្តពោរពេញដោយដើមឈើធំៗ ម្លប់ត្រជាក់ សួនផ្កាចម្រុះពណ៌ និងបរិយាកាសស្ងប់ស្ងាត់។",
+                significance: "បរិស្ថានធម្មជាតិដ៏ល្អបរិសុទ្ធជួយឱ្យពុទ្ធបរិស័ទដែលអញ្ជើញមកវត្តជ័យមង្គលទឹកថ្លា ទទួលបាននូវភាពស្រស់ស្រាយ និងសេចក្តីស្ងប់ក្នុងចិត្ត។"
+            }
+        ];
+
+        function renderStructures(filter = 'all') {
+            const grid = document.getElementById('structuresGrid');
+            grid.innerHTML = '';
+
+            const filtered = filter === 'all'
+                ? pagodaStructures
+                : pagodaStructures.filter(item => item.category === filter);
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-3xl overflow-hidden shadow-md khmer-card-border flex flex-col justify-between';
+                card.innerHTML = `
+                    <div>
+                        <div class="h-36 bg-gradient-to-br from-temple-maroon via-temple-red to-amber-900 p-6 flex items-center justify-between relative overflow-hidden">
+                            <div class="w-16 h-16 rounded-2xl bg-temple-gold/20 border border-temple-gold flex items-center justify-center text-temple-lightgold text-3xl z-10">
+                                <i class="fa-solid ${item.icon}"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-black/30 border border-temple-gold/40 text-temple-lightgold font-koulen text-xs z-10">
+                                ${item.categoryLabel}
+                            </span>
+                            <i class="fa-solid ${item.icon} text-8xl text-white/5 absolute -bottom-4 -right-4"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-moul text-lg text-temple-maroon mb-2">${item.title}</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed">${item.shortDesc}</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <button onclick="openStructureModal(${item.id})" class="w-full py-2.5 rounded-xl bg-temple-parchment hover:bg-temple-maroon text-temple-maroon hover:text-temple-lightgold border border-temple-gold/50 font-koulen text-sm transition flex items-center justify-center space-x-2">
+                            <span>មើលព័ត៌មានលម្អិត</span>
+                            <i class="fa-solid fa-circle-info"></i>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterStructures(category) {
+            // Update active button styles
+            document.querySelectorAll('.structure-filter-btn').forEach(btn => {
+                btn.className = 'structure-filter-btn px-5 py-2.5 rounded-xl bg-white text-temple-maroon hover:bg-amber-50 border border-amber-300 transition';
+            });
+            const activeBtn = document.getElementById(`filter-${category}`);
+            if (activeBtn) {
+                activeBtn.className = 'structure-filter-btn px-5 py-2.5 rounded-xl bg-temple-maroon text-temple-lightgold border border-temple-gold shadow transition';
+            }
+            renderStructures(category);
+        }
+
+        function openStructureModal(id) {
+            const item = pagodaStructures.find(s => s.id === id);
+            if (!item) return;
+            document.getElementById('modalStructureTitle').textContent = item.title;
+            document.getElementById('modalStructureBadge').textContent = item.categoryLabel;
+            document.getElementById('modalStructureDesc').textContent = item.shortDesc;
+            document.getElementById('modalStructureSignificance').textContent = item.significance;
+            document.getElementById('structureModal').classList.remove('hidden');
+        }
+
+        function closeStructureModal() {
+            document.getElementById('structureModal').classList.add('hidden');
+        }
+
+        // 2. Interactive Dharma Quotes Dataset
+        const dharmaQuotes = [
+            {
+                pali: "«នត្ថិ សន្តិ បរំ សុខំ»",
+                khmer: "«ពុំមានសេចក្តីសុខណា ស្មើដោយសេចក្តីស្ងប់ឡើយ។»",
+                explanation: "សេចក្តីស្ងប់ផ្លូវចិត្តដែលកើតចេញពីការរំងាប់នូវលោភៈ ទោសៈ និងមោហៈ គឺជាកំពូលនៃសេចក្តីសុខដ៏ឧត្តម ដែលទ្រព្យសម្បត្តិខាងក្រៅមិនអាចទិញបានឡើយ។",
+                source: "ប្រភព៖ គម្ពីរធម្មបទ (សុខវគ្គ)",
+                category: "សន្តិភាពផ្លូវចិត្ត"
+            },
+            {
+                pali: "«អត្តា ហិ អត្តនោ នាថោ»",
+                khmer: "«ខ្លួនឯងហ្នឹងហើយ ជាទីពឹងរបស់ខ្លួន។»",
+                explanation: "ព្រះពុទ្ធទ្រង់ទូន្មានឱ្យមនុស្សគ្រប់រូបខិតខំកសាងអំពើល្អ ប្រឹងប្រែងសិក្សា និងអប់រំចិត្តខ្លួនឯង ព្រោះគ្មាននរណាអាចជួយយើងឱ្យរួចផុតពីទុក្ខ ក្រៅពីការប្រតិបត្តិរបស់យើងផ្ទាល់ឡើយ។",
+                source: "ប្រភព៖ គម្ពីរធម្មបទ (អត្តវគ្គ)",
+                category: "ការពឹងខ្លួនឯង"
+            },
+            {
+                pali: "«ន ហិ វេរេន វេរានិ សម្មន្តីធ កុទាចនំ អវេរេន ច សម្មន្តិ»",
+                khmer: "«ពៀរទាំងឡាយ មិនដែលរំងាប់ដោយការចងពៀរឡើយ តែរមែងរំងាប់ដោយការមិនចងពៀរ។»",
+                explanation: "ការយកកំហឹងទល់នឹងកំហឹង មានតែបង្កើតភ្លើងទុក្ខមិនចេះចប់។ ការអភ័យទោស និងការផ្សាយមេត្តាធម៌ គឺជាឱសថដ៏ស័ក្តិសិទ្ធិបំផុតក្នុងការរំលត់ជម្លោះ។",
+                source: "ប្រភព៖ គម្ពីរធម្មបទ (យមកវគ្គ)",
+                category: "មេត្តាធម៌ និងការអភ័យទោស"
+            },
+            {
+                pali: "«សព្វទានំ ធម្មទានំ ជិនាតិ»",
+                khmer: "«ការឱ្យធម៌ជាទាន ឈ្នះអស់ទានទាំងពួង។»",
+                explanation: "ការចែករំលែកចំណេះដឹង សីលធម៌ និងមាគ៌ាព្រះធម៌ ជួយបំភ្លឺបញ្ញាដល់មនុស្សឱ្យស្គាល់ខុសត្រូវ ស្គាល់បុណ្យបាប ដែលមានតម្លៃលើសអាមិសទានទាំងឡាយ។",
+                source: "ប្រភព៖ គម្ពីរធម្មបទ (តណ្ហាវគ្គ)",
+                category: "ធម្មទាន"
+            },
+            {
+                pali: "«មនោបុព្វង្គមា ធម្មា មនោសេដ្ឋា មនោមយា»",
+                khmer: "«ធម៌ទាំងឡាយមានចិត្តជាប្រធាន មានចិត្តធំបំផុត សម្រេចមកអំពីចិត្ត។»",
+                explanation: "រាល់ពាក្យសម្តី និងទង្វើរបស់មនុស្សសុទ្ធតែកើតចេញពីចិត្ត។ បើបុគ្គលមានចិត្តបរិសុទ្ធ ទោះនិយាយ ឬធ្វើអ្វី ក៏សេចក្តីសុខតាមជាប់ដូចស្រមោលអន្ទោលតាមប្រាណ។",
+                source: "ប្រភព៖ គម្ពីរធម្មបទ (យមកវគ្គ)",
+                category: "ការអប់រំចិត្ត"
+            },
+            {
+                pali: "«សព្វបាបស្ស អករណំ កុសលស្សូបសម្បទា សចិត្តបរិយោទបនំ»",
+                khmer: "«ការមិនធ្វើបាបទាំងពួង ការបំពេញកុសលឱ្យបរិបូរណ៍ និងការជម្រះចិត្តរបស់ខ្លួនឱ្យផូរផង់។»",
+                explanation: "នេះគឺជាខ្លឹមសារសង្ខេបនៃឱវាទបាតិមោក្ខ ដែលជាបេះដូងនៃព្រះពុទ្ធសាសនា សម្រាប់នាំសត្វលោកឆ្ពោះទៅកាន់សេចក្តីសុខ និងព្រះនិព្វាន។",
+                source: "ប្រភព៖ ឱវាទបាតិមោក្ខ",
+                category: "បេះដូងព្រះពុទ្ធសាសនា"
+            },
+            {
+                pali: "«អប្បមាទោ អមតំ បទំ»",
+                khmer: "«សេចក្តីមិនប្រមាទ ជាផ្លូវនៃសេចក្តីមិនស្លាប់។»",
+                explanation: "ការរស់នៅប្រកបដោយសតិសម្បជញ្ញៈ មិនធ្វេសប្រហែសក្នុងការសាងអំពើល្អ និងការរក្សាសីលទាន គឺជាមាគ៌ាដ៏ប្រសើរនៃជីវិត។",
+                source: "ប្រភព៖ គម្ពីរធម្មបទ (អប្បមាទវគ្គ)",
+                category: "សតិ និងសេចក្តីមិនប្រមាទ"
+            },
+            {
+                pali: "«និមិត្តំ សាធុរូបានំ កតញ្ញូកតវេទិតា»",
+                khmer: "«ភាពជាអ្នកដឹងគុណ និងតបគុណ គឺជាសញ្ញានៃមនុស្សល្អ។»",
+                explanation: "ការដឹងគុណមាតាបិតា គ្រូបាអាចារ្យ ព្រះរតនត្រ័យ និងជាតិមាតុភូមិ គឺជាគុណធម៌ដ៏ខ្ពង់ខ្ពស់បំផុតរបស់ពុទ្ធបរិស័ទ។",
+                source: "ប្រភព៖ ពុទ្ធភាសិត",
+                category: "កតញ្ញូតាធម៌"
+            }
+        ];
+
+        const khmerNumerals = ['០', '១', '២', '៣', '៤', '៥', '៦', '៧', '៨', '៩'];
+        function toKhmerNum(num) {
+            return String(num).split('').map(d => khmerNumerals[d] || d).join('');
+        }
+
+        let currentQuoteIndex = 0;
+
+        function updateQuoteUI() {
+            const container = document.getElementById('quoteContainer');
+            container.style.opacity = '0';
+            setTimeout(() => {
+                const q = dharmaQuotes[currentQuoteIndex];
+                document.getElementById('quotePali').textContent = q.pali;
+                document.getElementById('quoteKhmer').textContent = q.khmer;
+                document.getElementById('quoteExplanation').textContent = q.explanation;
+                document.getElementById('quoteSource').textContent = q.source;
+                document.getElementById('quoteCategory').textContent = q.category;
+                document.getElementById('quoteCounter').textContent = `${toKhmerNum(currentQuoteIndex + 1)} / ${toKhmerNum(dharmaQuotes.length)}`;
+                container.style.opacity = '1';
+            }, 200);
+        }
+
+        function nextDharmaQuote() {
+            currentQuoteIndex = (currentQuoteIndex + 1) % dharmaQuotes.length;
+            updateQuoteUI();
+        }
+
+        function prevDharmaQuote() {
+            currentQuoteIndex = (currentQuoteIndex - 1 + dharmaQuotes.length) % dharmaQuotes.length;
+            updateQuoteUI();
+        }
+
+        function copyCurrentQuote() {
+            const q = dharmaQuotes[currentQuoteIndex];
+            const textToCopy = `${q.pali}\n${q.khmer}\nអត្ថន័យ៖ ${q.explanation}\n(${q.source} - វត្តជ័យមង្គលទឹកថ្លា ក្រុងសិរីសោភ័ណ)`;
+
+            const textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showToast("បានចម្លងពុទ្ធឱវាទទុកដោយជោគជ័យ!");
+            } catch (err) {
+                showToast("មិនអាចចម្លងបានទេ");
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // 3. Web Audio API: Peaceful Temple Bell Sound Synthesizer (សំឡេងជួងវត្ត)
+        let audioCtx = null;
+        function ringTempleBell() {
+            try {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+
+                const now = audioCtx.currentTime;
+                // Fundamental & harmonic frequencies for a resonant bronze temple bell
+                const freqs = [432, 864, 1296, 1728];
+                const gains = [0.35, 0.15, 0.08, 0.04];
+
+                freqs.forEach((f, idx) => {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(f, now);
+
+                    gain.gain.setValueAtTime(0.001, now);
+                    gain.gain.exponentialRampToValueAtTime(gains[idx], now + 0.03);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, now + 3.8 - idx * 0.6);
+
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+
+                    osc.start(now);
+                    osc.stop(now + 4.0);
+                });
+
+                // Visual bell shake animation
+                const bellIcon = document.getElementById('bellIconTop');
+                if (bellIcon) {
+                    bellIcon.classList.remove('bell-ringing');
+                    void bellIcon.offsetWidth;
+                    bellIcon.classList.add('bell-ringing');
+                }
+                showToast("ម៉ឺង... សូមឱ្យចិត្តរបស់អ្នកទទួលបាននូវសេចក្តីស្ងប់ និងសន្តិភាព។");
+            } catch (e) {
+                showToast("សូមអនុមោទនាបុណ្យកុសល!");
+            }
+        }
+
+        // 4. Merit Form & Certificate Handling
+        function selectProjectInForm(projectName) {
+            const select = document.getElementById('donorProject');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].value === projectName) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+            document.getElementById('donorName').focus();
+            showToast(`បានជ្រើសរើសគម្រោង៖ ${projectName}`);
+        }
+
+        function handleMeritSubmission(event) {
+            event.preventDefault();
+            const name = document.getElementById('donorName').value.trim();
+            const location = document.getElementById('donorLocation').value.trim() || 'ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ';
+            const project = document.getElementById('donorProject').value;
+            const wish = document.getElementById('donorWish').value.trim();
+
+            document.getElementById('certDonorName').textContent = name;
+            document.getElementById('certDonorLocation').textContent = location;
+            document.getElementById('certDonorProject').textContent = project;
+            document.getElementById('certDonorWishBox').textContent = wish
+                ? `សេចក្តីប្រាថ្នា៖ «${wish}»`
+                : `សូមឧទ្ទិសមហាកុសលនេះជូនដល់មាតាបិតា ជីដូនជីតា និងញាតិកាទាំង ៧ សន្តាន។`;
+
+            document.getElementById('certificateModal').classList.remove('hidden');
+            ringTempleBell();
+        }
+
+        function closeCertificateModal() {
+            document.getElementById('certificateModal').classList.add('hidden');
+        }
+
+        // 5. Mobile Menu & Toast Notification Utilities
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('mobileMenuIcon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        let toastTimeout = null;
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.remove('hidden');
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+
+        // Initialize on Window Load
+        window.onload = function () {
+            renderStructures('all');
+        };
+    </script>
+</body>
+</html>
