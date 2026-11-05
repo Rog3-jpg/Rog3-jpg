@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Admission Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dbeaf3; /* Light blue background */
+            color: #334d66; /* Dark slate blue text */
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-family: 'Khmer OS Battambang', 'Hanuman', sans-serif;
+            font-size: 32px;
+            margin: 0 0 10px 0;
+        }
+
+        .header h2 {
+            font-size: 22px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        /* Horizontal Layouts */
+        .row-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .row-group > label {
+            width: 60px;
+            font-weight: bold;
+        }
+
+        /* Input Styles */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            padding: 8px 10px;
+            border: 1px solid #8ab4f8;
+            background-color: transparent;
+            color: #334d66;
+            border-radius: 2px;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #8da4b8;
+        }
+
+        .name-inputs {
+            display: flex;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .name-inputs input {
+            width: 100%;
+        }
+        
+        .email-input, .phone-input, .emergency-input {
+            width: 100%;
+            max-width: 250px;
+        }
+
+        /* Stacked Layouts (Label on top) */
+        .stacked-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .stacked-group > label {
+            font-weight: bold;
+        }
+
+        .centered-group {
+            text-align: center;
+            align-items: center;
+        }
+
+        /* Radio Buttons */
+        .radio-container {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .radio-container.vertical {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-left: 25px;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        /* Custom Radio Styling to match the thick circles */
+        input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2.5px solid #334d66;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            margin: 0;
+        }
+
+        input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: #334d66;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>ការចុះឈ្មោះចូលរួមទូទៅ</h1>
+            <h2>សូមបំពេញព័ត៌មានខាងក្រោមដើម្បីចុះឈ្មោះចូលរួមកម្មវិធី</h2>
+        </div>
+    <form class="form-grid">
+            
+            <!-- Left Column -->
+            <div class="left-col">
+                
+                <div class="form-group row-group">
+                    <label>Name</label>
+                    <div class="name-inputs">
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                    </div>
+                </div>
+
+                <div class="form-group row-group">
+                    <label>Email</label>
+                    <input type="email" class="email-input" placeholder="sample@example.com">
+                </div>
+
+                <div class="form-group row-group">
+                    <label>Gender</label>
+                    <div class="radio-container">
+                        <label class="radio-item"><input type="radio" name="gender"> Male</label>
+                        <label class="radio-item"><input type="radio" name="gender"> Female</label>
+                    </div>
+                </div>
+
+                <div class="form-group row-group">
+                    <label>Phone</label>
+                    <input type="tel" class="phone-input">
+                </div>
+
+                <div class="form-group stacked-group">
+                    <label>Emergency Contact</label>
+                    <input type="text" class="emergency-input">
+                </div>
+
+                <br>
+
+                <div class="form-group stacked-group centered-group">
+                    <label>Do you require parking?</label>
+                    <div class="radio-container">
+                        <label class="radio-item"><input type="radio" name="parking"> Yes</label>
+                        <label class="radio-item"><input type="radio" name="parking"> No</label>
+                    </div>
+                </div>
+
+                <div class="form-group stacked-group centered-group" style="align-items: flex-start; text-align: left; margin-top: 30px;">
+                    <label>What is your room preference?</label>
+                    <div class="radio-container vertical">
+                        <label class="radio-item"><input type="radio" name="room"> Single Room</label>
+                        <label class="radio-item"><input type="radio" name="room"> Shared Room</label>
+                        <label class="radio-item"><input type="radio" name="room"> No Room Needed</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-col">
+                
+                <div class="form-group stacked-group">
+                    <label>Do you have dietary restrictions?</label>
+                    <div class="radio-container vertical">
+                        <label class="radio-item"><input type="radio" name="diet"> None</label>
+                        <label class="radio-item"><input type="radio" name="diet"> Vegetarian</label>
+                        <label class="radio-item"><input type="radio" name="diet"> Glutten Allergy</label>
+                        <label class="radio-item"><input type="radio" name="diet"> Lactose Allergy</label>
+                        <label class="radio-item"><input type="radio" name="diet"> Nut Allergy</label>
+                        <label class="radio-item"><input type="radio" name="diet"> Shellfish Allergy</label>
+                    </div>
+                </div>
+
+                <div class="form-group stacked-group" style="margin-top: 30px;">
+                    <label>What activities will you attend?</label>
+                    <div class="radio-container vertical">
+                        <label class="radio-item"><input type="radio" name="activity"> Awards Gala Dinner</label>
+                        <label class="radio-item"><input type="radio" name="activity"> Luncheon</label>
+                        <label class="radio-item"><input type="radio" name="activity"> Town Hall</label>
+                    </div>
+                </div>
+ <div class="form-group stacked-group" style="margin-top: 40px;">
+                    <label style="line-height: 1.4;">Do you want to see the list of other<br>attendees and their profiles on the<br>official event app?</label>
+                    <div class="radio-container" style="justify-content: center; margin-top: 10px;">
+                        <label class="radio-item"><input type="radio" name="app"> Yes</label>
+                        <label class="radio-item"><input type="radio" name="app"> No</label>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>               
